@@ -2,11 +2,64 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!-- Bootstrap Carousel + Custom Styles -->
 <style>
-    /* Card hover effect */
+    /* Hero Section */
+    .video-hero {
+        position: relative;
+        height: 100vh;
+        width: 100%; /* ensures full viewport width */
+        overflow: hidden;
+    }
+
+        .video-hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* fill container width */
+            height: 100%; /* fill container height */
+            object-fit: cover; /* crops video edges to fill */
+        }
+
+        body {
+    overflow-x: hidden;
+}
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+    }
+
+        .video-overlay h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+    /* Intro Section */
+    .intro-section {
+        text-align: center;
+        padding: 50px 20px;
+
+    }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    /* Card hover effect */ 
     .municipality-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 15px;
+        border-radius: 60px;
         overflow: hidden;
         cursor: pointer;
         text-decoration: none;
@@ -17,7 +70,7 @@
     }
 
         .municipality-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
@@ -29,7 +82,7 @@
         }
 
         .municipality-card .card-body {
-            flex-grow: 1; /* pushes button to bottom */
+            flex-grow: 1; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -41,52 +94,77 @@
             background-color: black;
             border: none;
             border-radius: 0 0 15px 15px;
-            margin-top: auto; /* ensures it stays at bottom */
+            margin-top: auto; 
             color: white;
             font-size: 16px;
             font-weight: bold;
         }
 
     .card-disabled {
-        background-color: black; 
-        color: #e9ecef; /* lighter text */
-        opacity: 0.8; /* slightly transparent */
-      pointer-events: none; /* prevents clicks */
+        background-color: black;
+        color: #e9ecef;
+        opacity: 0.9; /* keep a subtle transparency */
+        pointer-events: none;
+        border-radius: 60px; /* apply your curve */
+        overflow: hidden; /* ensures background follows the radius */
     }
+
+        /* Make the image itself dark/black */
+        .card-disabled img {
+            filter: grayscale(80%) brightness(0.5);
+            border-radius: 60px 60px 0 0; /* match card’s top radius */
+        }
 
 </style>
 
-<div class="row justify-content-center g-4" style="margin-top:10px">
-    <!-- Card 1 -->
-    <div class="col-md-3">
-        <a asp-controller="ReportIssues" asp-action="CreateReportIssues" class="municipality-card shadow-lg text-center">
-            <img src="images/reportissues.png" alt="Report Issues">
-            <button class="btn">Submit Report</button>
-        </a>
-    </div>
-
-    <!-- Card 2 -->
-    
-    <div class="col-md-3">
-        <div class="card card-disabled">
-            <a asp-controller="Home" asp-action="UnderMaintainence" class="municipality-card shadow-lg text-center">
-            <img src="images/annoucementsimage.png" alt="Events">
-            <button class="btn">View Events</button>
-        </a>
-    </div>
-    </div>
-
-    <!-- Card 3 Example -->
-    
-    <div class="col-md-3">
-        <div class="card card-disabled">
-            <a asp-controller="Home" asp-action="UnderMaintainence" class="municipality-card shadow-lg text-center">
-            <img src="images/serviceimage.png" alt="Updates">
-            @* <div class="card-body">
-               
-            </div> *@
-            <button class="btn">Check Status</button>
-        </a>
-    </div>
+<!-- Full-Screen Video Hero -->
+<div class="video-hero">
+    <video autoplay muted loop>
+        <source src="images/prog7312_vid_hero - Made with Clipchamp.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+    <div class="video-overlay">
+        <h1>Nelson Mandela Bay Municipality</h1>
     </div>
 </div>
+<br />
+<br />
+<br />
+
+<!-- Introduction -->
+
+<div class="intro-section">
+    <h5>
+        Our municipality is dedicated to serving the community with transparency,
+        efficiency, and innovation. <br/>This portal allows you to submit issues,
+        view important announcements, and track service requests in real-time.
+    </h5>
+</div>
+<br />
+<h2> Services</h2>
+<hr/>
+<div class="row justify-content-center g-4" style="margin-top:10px"> 
+    <!-- Card 1 --> 
+
+    <div class="col-md-3"> 
+        <a asp-controller="ReportIssues" asp-action="CreateReportIssues" class="municipality-card shadow-lg text-center"> 
+            <img src="images/reportissues.png" alt="Report Issues"> 
+            <button class="btn">Submit Report</button> </a>
+        </div> <!-- Card 2 --> 
+
+        <div class="col-md-3">
+            <div class="card card-disabled"> 
+                <a asp-controller="Home" asp-action="UnderMaintainence" class="municipality-card shadow-lg text-center"> 
+                    <img src="images/annoucementsimage.png" alt="Events"> 
+                    <button class="btn">View Events</button> </a> 
+                </div> 
+                </div> 
+                <!-- Card 3 Example -->
+                <div class="col-md-3"> 
+                    <div class="card card-disabled"> 
+                        <a asp-controller="Home" asp-action="UnderMaintainence" class="municipality-card shadow-lg text-center"> 
+                            <img src="images/serviceimage.png" alt="Updates"> @* <div class="card-body"> </div> *@
+                            <button class="btn">Check Status</button> </a> 
+             </div> 
+        </div> 
+      </div>

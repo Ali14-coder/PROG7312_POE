@@ -3,14 +3,7 @@
 @{
     ViewData["Title"] = "ReportIssuesConfirmation";
 }
-<div class="mb-3">
-    <label>Progress:</label>
-    <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 100%;">
-            100%
-        </div>
-    </div>
-</div>
+
 <br/>
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -39,7 +32,7 @@
                         <input type="hidden" asp-for="Category" />
                         <input type="hidden" asp-for="Description" />
                         <input type="hidden" asp-for="MediaAttachment" />
-                        <button type="submit" class="btn btn-secondary">Back</button>
+                        <button type="submit" class="stroke-button">Back</button>
                     </form>
 
                     <!-- Confirm button triggers final submission -->
@@ -50,7 +43,7 @@
                         <input type="hidden" asp-for="Category" />
                         <input type="hidden" asp-for="Description" />
                         <input type="hidden" asp-for="MediaAttachment" />
-                        <button type="submit" class="btn btn-primary">Confirm</button>
+                        <button type="submit" class="button">Confirm</button>
                     </form>
                 </div>
             </div>

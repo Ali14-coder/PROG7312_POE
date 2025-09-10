@@ -7,6 +7,35 @@ html {
     font-size: 16px;
   }
 }
+.button {
+    padding: 8px 18px;
+    font-size: 16px;
+    background-color: #800000; /* Example background color */
+    color: white; /* Example text color */
+    cursor: pointer;
+    border-radius: 10px; /* Optional: for rounded corners */
+    /* The "stroke" or border */
+    border: 2px solid #800000;
+}
+    .button:hover {
+        border-color: #ff6500;
+        background-color: #ff6500;
+    }
+
+.stroke-button {
+    /* Basic button styling */
+    padding: 8px 18px;
+    font-size: 16px;
+    background-color: transparent;
+    color: black; 
+    cursor: pointer;
+    border-radius: 10px; 
+    border: 2px solid #800000; /* 2px width, solid style, dark blue color */
+}
+
+    .stroke-button:hover {
+        border-color: #ff6500; 
+    }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;

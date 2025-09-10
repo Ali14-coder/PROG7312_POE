@@ -16,12 +16,13 @@
         /* Curved banner styling */
         .municipality-banner {
             position: relative;
-            background: linear-gradient(145deg, #003366, #0055aa, #000000);
+            background: linear-gradient(145deg, #e6c200, #ff6500, #800000);
             color: white;
-            padding: 3rem 1rem;
-            border-bottom-left-radius: 50% 25%;
-            border-bottom-right-radius: 50% 25%;
-            text-align: center;
+            padding: 1.1rem 1.1rem;
+            border-bottom-left-radius: 50% 45%;
+            border-bottom-right-radius: 50% 45%;
+            text-align: right; 
+            margin-right: 1rem;
         }
 
             .municipality-banner h1 {
@@ -37,8 +38,8 @@
 </head>
 <body>
     <header class="municipality-banner">
-        <h1>Nelson Mandela Bay Municipality</h1>
-        <p>Connecting residents with local services, events, and updates</p>
+        <a asp-controller="ReportIssues" asp-action="ViewReportIssues" class="btn btn-outline-light">View All Reports</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-light">Home</a>
     </header>
 
     <main role="main" class="flex-grow-1">

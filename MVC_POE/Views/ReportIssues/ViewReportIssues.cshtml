@@ -4,17 +4,17 @@
     ViewData["Title"] = "ViewReportIssues";
     var groupedForms = Model.GroupBy(f => f.Location).ToList();
 }
-
+<br/>
 <h1 class="mb-4">All Reported Issues</h1>
 <hr/>
 <form method="get" class="mb-4 d-flex">
     <input type="text" name="location" value="@ViewData["CurrentLocation"]" 
            class="form-control me-2" placeholder="Search by location..." />
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="submit" class="button">Search</button>
 </form>
 <br/>
 <p>
-    <a asp-action="CreateReportIssues" class="btn btn-primary">Create New</a>
+    <a asp-action="CreateReportIssues" class="stroke-button">Create New</a>
 </p>
 
 @foreach (var locationGroup in groupedForms)
@@ -56,8 +56,8 @@
                                 <div class="card-footer d-flex justify-content-around">
                                     @if (!string.IsNullOrEmpty(item.MediaAttachment))
                                     {
-                                        <a href="@item.MediaAttachment" target="_blank" class="btn btn-sm btn-primary">View</a>
-                                        <a href="@item.MediaAttachment" download="@item.MediaAttachment" class="btn btn-sm btn-secondary">Download</a>
+                                        <a href="@item.MediaAttachment" target="_blank" class="stroke-button">View</a>
+                                        <a href="@item.MediaAttachment" download="@item.MediaAttachment" class="button">Download</a>
                                     }
                                     else
                                     {
@@ -111,4 +111,5 @@
 .carousel-control-next {
     width: 5%;
 }
+
 </style>

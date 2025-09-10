@@ -22,7 +22,7 @@
             border-bottom-left-radius: 50% 45%;
             border-bottom-right-radius: 50% 45%;
             text-align: right; 
-            margin-right: 1rem;
+            
         }
 
             .municipality-banner h1 {
@@ -37,9 +37,9 @@
     </style>
 </head>
 <body>
-    <header class="municipality-banner">
+    <header class="municipality-banner" style="margin-bottom: 1rem">
         <a asp-controller="ReportIssues" asp-action="ViewReportIssues" class="btn btn-outline-light">View All Reports</a>
-        <a asp-controller="Home" asp-action="Index" class="btn btn-light">Home</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-light" style="margin-right:6rem">Home</a>
     </header>
 
     <main role="main" class="flex-grow-1">
